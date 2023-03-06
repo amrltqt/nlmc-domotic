@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Domotic chatbot</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  </head>
+  <body>
+    <div class="container mx-auto text-slate-800">
+      <h1>Domotic chatbot</h1>
+      <div class="flex">
+        <div class="flex-1">
+          <form action="" onsubmit="send_request(event)">
+            <input type="text" id="request" autocomplete="off" />
+            <button class="border px-4 py-2">Send</button>
+          </form>
+        </div>
+        <div id="state" class="flex-1 flex">
+          <div class="flex-1 flex flex-col">
+            <div>Thermostat</div>
+            <div><span id="thermostat">20</span>°</div>
+          </div>
+          <div class="flex-1 flex flex-col">
+            <div>Shutter</div>
+            <div id="shutter">Open</div>
+          </div>
+          <div class="flex-1 flex flex-col">
+            <div>Music</div>
+            <div id="music">Stopped</div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="mt-4" id="logs"></ul>
+    </div>
+    <script src="{{ url_for('static', path='scripts.js') }}"></script>
+  </body>
+</html>

@@ -31,9 +31,9 @@ setInterval(function () {
         .then(function (response) {
             return response.json();
         }).then(function (data) {
-            document.getElementById("thermostat").innerText('beforeend', data.thermostat);
-            document.getElementById("shutter").innerText('beforeend', data.shutter);
-            document.getElementById("music").innerText('beforeend', data.music);
+            document.getElementById("thermostat").innerText = data.thermostat;
+            document.getElementById("shutter").innerText = data.shutter;
+            document.getElementById("music").innerText = data.music;
         }).catch(function (err) {
             console.error(err)
         })
